@@ -3,9 +3,10 @@ import random
 counter_fail = 0
 total_attempts = 3
 category_selection = []
-
-while True:
+selection = True
+while selection:
     choice = input("Do you want to play Hangman? Yes = Press Y /  No =  Press N for other games ").lower()
+
     if choice == 'y':
         print('GAME RULES: 3 maximum fail attempts AND letters from a to z')
         print(" ")
@@ -67,7 +68,13 @@ while True:
             print("        |")
             print("=========")
             print('The word was ' + "".join(secret_word).upper())
-    if choice == 'n':
+
+
+    elif choice == 'n':
         print("\n")
         print("Ask Sky or Denisse, they have more games")
-    exit()
+    else:
+        print("Option not recognized")
+
+
+
