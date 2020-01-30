@@ -6,7 +6,6 @@ category_selection = []
 selection = True
 while selection:
     choice = input("Do you want to play Hangman? Yes = Press Y /  No =  Press N for other games ").lower()
-
     if choice == 'y':
         print('GAME RULES: 3 maximum fail attempts AND letters from a to z')
         print(" ")
@@ -55,9 +54,9 @@ while selection:
                 found_letters[index_letter] = guess_letter
                 print(" ".join(found_letters))
                 print(" ")
-        if secret_word == found_letters:
-            print('Congratulation you guessed the secret word ')
-            break
+            if secret_word == found_letters:
+                print('Congratulation you guessed the secret word ')
+                break
         else:
             print('3 fail attempts reached - You did not guess the secrete word')
             print("   + ---+")
@@ -69,12 +68,11 @@ while selection:
             print("=========")
             print('The word was ' + "".join(secret_word).upper())
 
-
     elif choice == 'n':
         print("\n")
         print("Ask Sky or Denisse, they have more games")
     else:
         print("Option not recognized")
-
+    
 
 
