@@ -73,6 +73,6 @@ while selection:
         print("Ask Sky or Denisse, they have more games")
     else:
         print("Option not recognized")
-    
+
 
 
