@@ -29,21 +29,24 @@ group by date
 order by date asc, duration asc;
 
 #question 6
-select account_id,type, sum(amount)  from bank.trans
+select account_id,type as transaction_type, round(sum(amount)) as total_amount from bank.trans
 where account_id = 396
 group by type;
 
 #Question 7
-select account_id,type as transaction_type, round(sum(amount)) as total_amount from bank.trans
-where account_id = 396
-group by type;
+SELECT account_id, IF(type = 'PRIJEM', 'INCOMING', 'OUTGOING') AS transaction_type,
+    FLOOR(SUM(amount)) AS total_amount
+FROM trans
+WHERE account_id = 396
+GROUP BY account_id, transaction_type
+ORDER BY transaction_type;
 
 #Question 8
-select account_id,type as transaction_type, round(sum(amount)) as total_amount from bank.trans
-where account_id = 396 
-group by type;
+select account_id, type, round(SUM(amount)) as total_amount from bank.trans
+where type NOT IN('VYBER')
+group by account_id,type
+order by account_id,type,round(SUM(amount));
 
 #Question 9
-
 
 
