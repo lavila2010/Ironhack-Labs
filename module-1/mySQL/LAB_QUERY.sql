@@ -1,3 +1,6 @@
+use lab_mysql;
+select * from apple;
+select count(*) from apple; # to check all the row in 
 SELECT * FROM lab_mysql.apple;
 # Question 1
 select count(distinct prime_genre) from apple; # Result= 23 Genres

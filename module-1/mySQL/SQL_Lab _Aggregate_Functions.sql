@@ -17,7 +17,7 @@ group by account_id
 order by amount desc limit 10;
 
 #Question 4
-select loan_id,date from bank.loan 
+select loan_id,date from bank.loan      # date,count(*) loans_issued
 where date < 930907
 group by date 
 order by date asc;
