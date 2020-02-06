@@ -1,4 +1,4 @@
-
+use lab_mysql;
 CREATE TEMPORARY TABLE summary
 select sub1.title_id,sub1.price,sub1.advance,sub1.royalty,sub1.ytd_sales,sub1.title, authors.au_id,sub1.royaltyper
 from(
