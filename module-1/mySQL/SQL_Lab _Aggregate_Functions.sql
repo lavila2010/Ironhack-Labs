@@ -1,3 +1,4 @@
+use bank;
 select * from bank.client;
 
 #Question 1 - Results below
@@ -42,11 +43,21 @@ GROUP BY account_id, transaction_type
 ORDER BY transaction_type;
 
 #Question 8
+create temporary table calculations
 select account_id, type, round(SUM(amount)) as total_amount from bank.trans
 where type NOT IN('VYBER')
 group by account_id,type
 order by account_id,type,round(SUM(amount));
 
 #Question 9
+select * from calculations;
 
-
+  select account_id,sum(sub1.income) as Total_Income  , sum(sub1.outcome) as Total_Outcome, sum(sub1.income) - sum(sub1.outcome) as Difference
+  from(
+  select account_id,
+    case when type ='PRIJEM' then total_amount else 0 end as income,
+    case when type='VYDAJ' then total_amount else 0 end as outcome
+  from calculations)sub1
+  group by account_id
+  order by Difference desc limit 10;
+  
