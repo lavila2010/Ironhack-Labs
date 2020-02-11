@@ -30,7 +30,7 @@ def main ():
 
     def wrangle_drop_columns(df): # Drop Columns with null values greater 50% of total rows
         column_dropper = data1.isnull().sum() / len(data1['City']) * 100
-        column_check = data1["Date"].count() / len(data1['Date']) * 100
+        check = column_dropper.to_dict()
 
         if column_check > column_dropper:
             del data1['Date']
