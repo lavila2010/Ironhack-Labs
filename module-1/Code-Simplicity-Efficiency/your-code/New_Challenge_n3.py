@@ -1,4 +1,6 @@
-
+a=[3, 4, 5]
+b=[6, 8, 10]
+c=[5, 12, 13]
 
 def my_function(X):
     solutions = [(x, y, z)]
