@@ -8,7 +8,7 @@ create table purchase_Orders(
 PO_N int(7) primary key,
 PO_D varchar(250),
 Supplier_N int(4),
-PO_Pay_Termns varchar(10) not null);
+PO_Pay_Termns varchar(10) not null); # default "net30" not null
 
 insert into purchase_Orders( PO_N  ,PO_D , Supplier_N, PO_Pay_Termns)
 values
